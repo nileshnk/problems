@@ -1,0 +1,161 @@
+DBMS vs rdbms
+
+database
+types of dbms: heirarchial , relational, network, object-oriented
+advantages: data independence(change structure of data w changing struct of db), sharing of data, integrity constraints, redundancy control(all data in a single db), backup recovery
+languages in dbms: 
+DDL : define the db schema
+DML: manipulate the data in db
+DCL: rights, permission and other control in db 
+TCL: deal with transaction of database
+
+constraints in dbms:
+---
+query optimisation? it is the phase which identifies a plan for evaluation query that has the least estimated cost.
+when there are lot of algos and methods to execute the same task.
+
+advantages: o/p is provided faster
+large no. of queries can be executed in less time
+reduces time and space complexity
+
+----
+NULL values? which is unavailable, unknown, unassigned, unapplicable
+
+aggregation :this property states that database modification must follow all the rules or nothing at all
+atomicity : this is a feature of the e-r model which allows a relationship set to participate in another relationship set.
+
+different levels of data abstraction: phy, logical, view
+
+entity relationship model : diagrammatic approach to db design.
+Entity entity type:  collection of entities having the same attributes
+
+entity set: is the collection of all entites of a particular entity type in a database. 
+for e.g set of employees, 
+
+types of relationship in dbms : 1 to many, 1 to 1, many to many, self referencing
+
+concurrency control : this is a process managing simultaneous operations in a database so that database integrity is not compromised.
+two approaches: optimistic(versioning), pessimistic (locking)
+
+acid properties:
+atomicity: refers to those transaction which are completely successful or failed.
+consistency: the data must meet all the validation rules.
+isolation: the main goal of isolationis concurrency control
+durability: it means that if a transaction has been committed it will occur whatever may be the scenario
+------------
+
+normalization : 1 nf 2nf 3nf bcnf
+
+-------
+diff types of keys in db
+primary key : one of candidate key
+candidate key : can be uniquely identified,, each table can have more than one cand key
+super key : set of attributes which can uniquely identify every tuple, cand, primary, unique can be termed as super key but vice versa is not correct.
+primary key: uniquely identify every tuple. 
+unique key: similar to primary key, but allows NULL values
+alternate key: candidates keys which are not chosen as primary key
+foreign key : 
+composite key : it is a combination of two or more columns that identify each tuple uniquely
+
+-----------
+
+co-related subqueries : is also a sort of subquery reliant on another query
+
+each subquery is executed a single time for every row of the outer query
+
+------
+
+database partitioning and its imp
+It is the process of dividing a logical database into independent units for the betterment of availability, performance, and manageability.
+importance: enables you to access large parts of a specific partition.
+cheap and slower storage can be used to store data
+improves query performance
+---
+
+Functional Dependency : A fincitonal dependency us a constraint which is used in describing the relationship among different attributes in a relation. X->Y
+Transitive Dependency : A transitive dependency is a constraint which can only occur in a relation of three or more attributes. X->Y ; Y !-> X ; Y->Z ;
+
+---
+2 tier - client server, direct comm to db
+3 tier - client application database, comm happen through app layer, which makes it more secure.
+
+-----
+Checkpoint is a mechanism where all the previous logs are removed from the system and are permanently stored on the storage disk.
+
+--------
+
+Triggers :
+a special kind of stored procedure that is not called directly by a user. In fact, a trigger is created and is programmed to fire when a specific event occurs.
+cannot schedule a trigger.
+cannot directly call another trigger within a trigger
+parameters cannot be passed as input
+cannot return values
+transaction are not allowed within a trigger
+
+Stored Procedures:
+A group of SQL statements which can be reused again and again. These statements are created and stored in the database.
+Can execute stored procedures by using the "exec" command, whenever we want
+You can schedule a job to execute the stored procedure on a pre-defined time.
+call a stored procedure from another stored procedure
+parameters can be passed as input.
+can return zero or n values.
+you can use transaction within a stored procedure.
+
+-----
+
+hash join, merge join, nested loops 
+# hash join is used when you have to join large tables
+# Merge join is used when projections of the joined tables are sorted on the join columns.
+# The nested loop consists of an outer loop and an inner loop
+
+------
+
+Proactive Update
+These updates are applied to the database before it becomes effective in the real-world environment
+
+Retro-active Update
+These retroactive updates are applied to a database after it becomes effective in the rea-world environment.
+
+Simultaneous Update
+These updates are applied to the database at the same instance of time as it becomes effective in a real-world environment.
+
+--------
+
+Indexes : These are data structures responsible for improving the speed of data retrieval operations on a table.
+This data structure uses more storage space to maintain extra copies of dta by using additional writes.
+used for searching algorithms, where you wish to retrueve data in a quick manner.
+
+Clustered Index :
+Faster
+Alters the way records are stored in a database as it sorts out rows by the column which is set to be clustered index.
+One table can only have one clustered index.
+
+Non-Clustered Index
+Relatively slower
+Doesnt alter the way it was stored but it creates a separate object within a table which points back to the original table rows after searching
+One table can only have many non clustered indexes
+
+-----
+
+Intension
+Most commonly known as Database schema defines the description of the database. This is specified during the database design and mostly remains unchanged
+description
+Extension
+It is the number of tuples available in the database at any instance of time. This value keeps changing as and when the tuples are created, updated and destroyed.
+snapshot
+
+-------
+
+Cursor :
+A cursor is a database object which helps in manipulating data, row by row and represents a result set.
+Implicit Cursor : which is declared automatically as the execution of sequel takes place. user is not indicated about the declareation of the cursor.
+Explicit Cursor : defined by the PL SQL as it handles a query in more than a single row.
+
+-----------
+
+Specialization : It is a process of definig a set of subclasses of the entity type. Here, each subclass will contain all the attributes and relationships of the parent entity. THe subclasses ay contain additional attributes and relationships specific to itself.
+
+Generalization : It is a proceess of finding relations, common attributes for a particular set of entities and finally defining a common superclass for them.
+
+
+
