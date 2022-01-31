@@ -9,6 +9,7 @@ gcd(int a,int b)
   else
   return gcd(b,a%b);
 }
+239614
 
 void leftRotate(int arr[],int d,int n)
 {
@@ -21,7 +22,7 @@ void leftRotate(int arr[],int d,int n)
 	
 		while(1) {
 		int k=j+d;
-		if(k>=d)
+		if(k>=n)
 		k=k-n;
 
 		if(k==i)
@@ -29,9 +30,9 @@ void leftRotate(int arr[],int d,int n)
 
 		arr[j]=arr[k]
 		j=k;
-	}
+		}
 	arr[j]=temp;
-}
+	}
 }
 
 
